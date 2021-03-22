@@ -47,11 +47,11 @@ app.post('/failure',(req,res)=>{
     const jsonData = JSON.stringify(data);
 
     // https.request(url, options,(response){})
-    const url = `https://us1.api.mailchimp.com/3.0/lists/004d9d609a`;
+    const url = `https://us1.api.mailchimp.com/3.0/lists/${id}`;
 
     const options = {
         method: 'POST',
-        auth: 'acafaca1:13f590ddfc598451209646d13aca13cb-us1'
+        auth: 'YourApiKey'
     };
 
     const request = https.request(url, options, (response) => {
@@ -82,8 +82,3 @@ app.listen(process.env.PORT || 3000, () => {
 });
 
 
-//ApiKey
-//13f590ddfc598451209646d13aca13cb-us1
-
-//listId
-//004d9d609a
